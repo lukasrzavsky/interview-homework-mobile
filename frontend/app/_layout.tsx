@@ -10,6 +10,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
+import Toast from "react-native-toast-message";
 
 export default function RootLayout() {
 	const colorScheme = useColorScheme();
@@ -39,6 +40,7 @@ export default function RootLayout() {
 				</Stack>
 				<StatusBar style="auto" />
 			</QueryClientProvider>
+			<Toast position="top" />
 		</ThemeProvider>
 	);
 }
