@@ -14,23 +14,23 @@ const TabsLayout = () => {
 			backBehavior="history"
 		>
 			<Tabs.Screen
-				name="index"
+				name="(status)"
 				options={{
 					title: "Status",
 					tabBarIcon: ({ color }) => (
 						<IconSymbol name="table" color={color} />
 					),
-					href: "/",
+					href: "/(tabs)/(status)",
 				}}
 			/>
 			<Tabs.Screen
-				name="shipments"
+				name="(shipment)"
 				options={{
 					title: "Shipment",
 					tabBarIcon: ({ color }) => (
 						<IconSymbol name="export" color={color} />
 					),
-					href: "/shipments",
+					href: "/(tabs)/(shipment)",
 				}}
 			/>
 		</Tabs>
