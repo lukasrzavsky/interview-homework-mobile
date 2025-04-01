@@ -1,4 +1,4 @@
-const ShipmentsScreen = () => {
+const ShipmentsScreen: React.FC = () => {
 	return <></>;
 };
 

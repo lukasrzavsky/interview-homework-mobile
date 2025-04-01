@@ -10,7 +10,7 @@ import Toast from "react-native-toast-message";
 export const useRemoveWarehouseItem = () => {
 	const queryClient = useQueryClient();
 
-	const removeWarehouseItem = async (itemId: string): Promise<void> => {
+	const removeWarehouseItem = async (itemId: number): Promise<void> => {
 		const response = await axiosInstance.delete(
 			ApiPaths.warehouseItem.delete(itemId),
 		);
