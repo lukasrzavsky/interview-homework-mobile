@@ -20,7 +20,7 @@ export const useRemoveWarehouseItem = () => {
 
 	return useMutation({
 		mutationFn: removeWarehouseItem,
-		mutationKey: [MutationKeys.warehouseItems.delete],
+		mutationKey: [MutationKeys.warehouseItems.remove],
 		onSuccess: () => {
 			queryClient.invalidateQueries({
 				queryKey: [QueryKeys.warehouseItems.list],
