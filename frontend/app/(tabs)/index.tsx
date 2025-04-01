@@ -1,3 +1,11 @@
+import { ProductListing } from "@/components/ProductListing";
+import { ThemedText } from "@/components/ThemedText";
+import { IconSymbol, IconSymbolName } from "@/components/ui/IconSymbol";
+import { Colors } from "@/constants/Colors";
+import { SocialIcons } from "@/constants/SocialIcons";
+import { useColorScheme } from "@/hooks/useColorScheme";
+import { ProductsMock } from "@/mocks/Products.mock";
+import { WarehouseItem } from "@/models/WarehouseItem";
 import { useCallback, useEffect, useState } from "react";
 import {
 	FlatList,
@@ -7,16 +15,8 @@ import {
 	TouchableOpacity,
 	View,
 } from "react-native";
-import { Colors } from "@/constants/Colors";
-import { IconSymbol, IconSymbolName } from "@/components/ui/IconSymbol";
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { ThemedText } from "@/components/ThemedText";
-import { WarehouseItem } from "@/models/WarehouseItem";
-import { ProductListing } from "@/components/ProductListing";
-import { ProductsMock } from "@/mocks/Products.mock";
-import { SocialIcons } from "@/constants/SocialIcons";
 
-export default function Index() {
+const WarehouseStatusScreen = () => {
 	const theme = useColorScheme() ?? "light";
 
 	const [products, setProducts] = useState<WarehouseItem[]>([]);
@@ -78,7 +78,9 @@ export default function Index() {
 			/>
 		</SafeAreaView>
 	);
-}
+};
+
+export default WarehouseStatusScreen;
 
 const styles = StyleSheet.create({
 	container: {
