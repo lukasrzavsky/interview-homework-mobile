@@ -1,6 +1,7 @@
 export const ApiPaths = {
 	warehouseItem: {
 		list: "/warehouseItems",
+		create: "/warehouseItems",
 		delete: (itemId: string) => `/warehouseItems/${itemId}`,
 		detail: (itemId: string) => `/warehouseItems/${itemId}`,
 	},
