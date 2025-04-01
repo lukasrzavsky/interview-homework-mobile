@@ -1,4 +1,10 @@
 export const QueryKeys = {
-	warehouseItems: "warehouseItems",
-	shipments: "shipments",
+	warehouseItems: {
+		list: "warehouseItems",
+		details: "warehouseItemDetails",
+	},
+	shipment: {
+		list: "shipments",
+		details: "shipmentDetails",
+	},
 };
