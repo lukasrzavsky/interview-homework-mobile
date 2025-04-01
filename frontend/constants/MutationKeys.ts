@@ -1,5 +1,8 @@
 export const MutationKeys = {
 	warehouseItems: {
-		delete: "deleteWarehouseItems",
+		remove: "removeWarehouseItems",
+	},
+	shipment: {
+		remove: "removeShipment",
 	},
 };

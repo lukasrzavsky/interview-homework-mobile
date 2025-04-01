@@ -7,34 +7,34 @@ import { MutationKeys } from "@/constants/MutationKeys";
 import { QueryKeys } from "@/constants/QueryKeys";
 import Toast from "react-native-toast-message";
 
-export const useRemoveWarehouseItem = () => {
+export const useRemoveShipment = () => {
 	const queryClient = useQueryClient();
 
-	const removeWarehouseItem = async (itemId: string): Promise<void> => {
+	const removeShipment = async (itemId: string): Promise<void> => {
 		const response = await axiosInstance.delete(
-			ApiPaths.warehouseItem.delete(itemId),
+			ApiPaths.shipments.delete(itemId),
 		);
 
 		return response.data;
 	};
 
 	return useMutation({
-		mutationFn: removeWarehouseItem,
-		mutationKey: [MutationKeys.warehouseItems.delete],
+		mutationFn: removeShipment,
+		mutationKey: [MutationKeys.shipment.remove],
 		onSuccess: () => {
 			queryClient.invalidateQueries({
-				queryKey: [QueryKeys.warehouseItems.list],
+				queryKey: [QueryKeys.shipment.list],
 			});
 
 			Toast.show({
 				type: "success",
-				text1: "Item has been successfully removed!",
+				text1: "Shipment has been successfully removed!",
 			});
 		},
 		onError: () => {
 			Toast.show({
 				type: "error",
-				text1: "Failed to remove item!",
+				text1: "Failed to remove Shipment!",
 			});
 		},
 	});

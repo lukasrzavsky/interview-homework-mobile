@@ -6,6 +6,7 @@ export const ApiPaths = {
 	},
 	shipments: {
 		list: "/shipments",
+		delete: (itemId: string) => `/shipments/${itemId}`,
 		detail: (itemId: string) => `/shipments/${itemId}`,
 	},
 };
