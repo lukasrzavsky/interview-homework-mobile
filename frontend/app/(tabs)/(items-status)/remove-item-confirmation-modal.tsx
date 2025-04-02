@@ -22,7 +22,7 @@ const RemoveItemConfirmationModalScreen = () => {
 					Are you sure you want to remove the item?
 				</ThemedText>
 				<ThemedText style={styles.centeredText}>
-					Confirm to delete the entry{" "}
+					Confirm to delete the item
 				</ThemedText>
 				<Button
 					label="Remove"
