@@ -4,16 +4,15 @@ import axiosInstance from "@/api/axiosInstance";
 import { ApiPaths } from "@/constants/ApiPaths";
 import { MutationKeys } from "@/constants/MutationKeys";
 import { QueryKeys } from "@/constants/QueryKeys";
-import { WarehouseItem } from "@/models/WarehouseItem";
 import Toast from "react-native-toast-message";
-
-// TODO: infer from form type
-type Body = Omit<WarehouseItem, "id">;
+import { CreateWarehouseItemFormType } from "../forms/useCreateWarehouseItemForm";
 
 export const useCreateWarehouseItem = () => {
 	const queryClient = useQueryClient();
 
-	const createWarehouseItem = async (body: Body): Promise<void> => {
+	const createWarehouseItem = async (
+		body: CreateWarehouseItemFormType,
+	): Promise<void> => {
 		const response = await axiosInstance.post(
 			ApiPaths.warehouseItem.create,
 			body,
