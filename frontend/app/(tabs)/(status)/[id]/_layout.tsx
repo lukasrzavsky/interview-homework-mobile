@@ -1,11 +1,10 @@
 import { Stack } from "expo-router";
 
-const StatusLayout = () => (
+const WarehouseItemLayout = () => (
 	<Stack initialRouteName="index" screenOptions={{ headerShown: false }}>
 		<Stack.Screen name="index" />
-		<Stack.Screen name="add-warehouse-item" />
-		<Stack.Screen name="[id]" />
+		<Stack.Screen name="edit" />
 	</Stack>
 );
 
-export default StatusLayout;
+export default WarehouseItemLayout;

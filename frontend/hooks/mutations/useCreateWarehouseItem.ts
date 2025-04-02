@@ -5,13 +5,13 @@ import { ApiPaths } from "@/constants/ApiPaths";
 import { MutationKeys } from "@/constants/MutationKeys";
 import { QueryKeys } from "@/constants/QueryKeys";
 import Toast from "react-native-toast-message";
-import { CreateWarehouseItemFormType } from "../forms/useCreateWarehouseItemForm";
+import { WarehouseItemFormType } from "../forms/useWarehouseItemForm";
 
 export const useCreateWarehouseItem = () => {
 	const queryClient = useQueryClient();
 
 	const createWarehouseItem = async (
-		body: CreateWarehouseItemFormType,
+		body: WarehouseItemFormType,
 	): Promise<void> => {
 		const response = await axiosInstance.post(
 			ApiPaths.warehouseItem.create,

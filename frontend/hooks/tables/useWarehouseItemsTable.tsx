@@ -6,12 +6,13 @@ import { useThemeColor } from "../useThemeColor";
 import { ThemedText } from "@/components/ThemedText";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { ProductsMock } from "@/mocks/Products.mock";
-import { router } from "expo-router";
+import { Link } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 export const useWarehouseItemsTable = () => {
 	const [products, setProducts] = useState<WarehouseItem[]>(ProductsMock);
 
+	// NOTE: all these comments are by purpose, I want to show how it will work with BE endpoints
 	// const {data, isLoading, isError} = useGetWarehouseItems();
 
 	const iconTintColor = useThemeColor({}, "icon");
@@ -19,10 +20,6 @@ export const useWarehouseItemsTable = () => {
 	const columnHelper = createColumnHelper<WarehouseItem>();
 
 	// const { mutate, isPending } = useRemoveWarehouseItem();
-
-	const handleEdit = (item: WarehouseItem) => {
-		console.log("Edit item:", item);
-	};
 
 	const handleDelete = useCallback(
 		(id: number) => {
@@ -40,17 +37,12 @@ export const useWarehouseItemsTable = () => {
 			cell: (info) => {
 				const itemId = info.getValue();
 
-				const navigateToItem = () =>
-					router.push({
-						pathname: "/(tabs)/(status)/[id]",
-						params: { id: itemId },
-					});
 				return (
-					<TouchableOpacity onPress={navigateToItem}>
+					<Link href={`/(tabs)/(status)/${itemId}`}>
 						<ThemedText style={styles.cellText}>
 							{itemId}
 						</ThemedText>
-					</TouchableOpacity>
+					</Link>
 				);
 			},
 			size: 80,
@@ -87,13 +79,9 @@ export const useWarehouseItemsTable = () => {
 			header: "Actions",
 			cell: ({ row }) => (
 				<View style={styles.actionContainer}>
-					<TouchableOpacity
-						// disabled={isPending}
-						onPress={() => handleEdit(row.original)}
-						style={styles.actionButton}
-					>
+					<Link href={`/(tabs)/(status)/${row.original.id}/edit`}>
 						<IconSymbol name="edit" color={iconTintColor} />
-					</TouchableOpacity>
+					</Link>
 					<TouchableOpacity
 						// disabled={isPending}
 						onPress={() => handleDelete(row.original.id)}

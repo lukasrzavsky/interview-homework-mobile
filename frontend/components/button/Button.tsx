@@ -1,14 +1,14 @@
 import { ActivityIndicator, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "../ThemedText";
 
-type Props = {
+export type ButtonProps = {
 	onPress: VoidFunction;
 	label: string;
 	disabled?: boolean;
 	isLoading?: boolean;
 };
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<ButtonProps> = ({
 	onPress,
 	label,
 	disabled = false,

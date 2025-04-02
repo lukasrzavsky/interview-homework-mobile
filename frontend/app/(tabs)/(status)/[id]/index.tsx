@@ -7,9 +7,12 @@ import { Image, StyleSheet, View } from "react-native";
 const WarehouseItemDetailScreen = () => {
 	const { id } = useLocalSearchParams<{ id: string }>();
 
-	const { imageUrl, name, description, quantity, unitPrice } =
-		ProductsMock[+id - 1];
+	const currentMockProductID = +id - 1;
 
+	const { imageUrl, name, description, quantity, unitPrice } =
+		ProductsMock[currentMockProductID];
+
+	// NOTE: all these comments are by purpose, I want to show how it will work with BE endpoints
 	// const {data, isLoading, isError} = useGetWarehouseItemDetails(id);
 
 	// useEffect(() => {
@@ -57,6 +60,7 @@ const WarehouseItemDetailScreen = () => {
 				{imageUrl && (
 					<Image
 						alt="item-image"
+						// @ts-ignore // Temp solution, once we have data from BE, the param will use {uri: imageUrl}
 						source={imageUrl}
 						className="h-full w-full"
 						resizeMode="cover"

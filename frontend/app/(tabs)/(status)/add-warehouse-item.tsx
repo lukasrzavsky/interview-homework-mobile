@@ -1,56 +1,34 @@
-import { Button } from "@/components/button/Button";
-import ImageInput from "@/components/input/ImageInput";
-import { Input } from "@/components/input/Input";
-import { KeyboardAvoidingWrapper } from "@/components/keyboardAvoidingWrapper/KeyboardAvoidingWrapper";
+import { WarehouseItemForm } from "@/components/forms/WarehouseItemForm";
 import Layout from "@/components/layout/Layout";
-import { ThemedText } from "@/components/ThemedText";
 import {
-	CreateWarehouseItemFormType,
-	useCreateWarehouseItemForm,
-} from "@/hooks/forms/useCreateWarehouseItemForm";
+	WarehouseItemFormType,
+	useWarehouseItemForm,
+} from "@/hooks/forms/useWarehouseItemForm";
 import { useCreateWarehouseItem } from "@/hooks/mutations/useCreateWarehouseItem";
 import { FormProvider } from "react-hook-form";
-import { ScrollView, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 const AddWarehouseItem: React.FC = () => {
-	const formMethods = useCreateWarehouseItemForm();
+	const formMethods = useWarehouseItemForm();
 
 	const { mutate, isPending } = useCreateWarehouseItem();
 
 	const { handleSubmit } = formMethods;
 
-	const handleOnSubmitPress = (args: CreateWarehouseItemFormType) =>
-		mutate(args);
+	const handleOnSubmitPress = (args: WarehouseItemFormType) => mutate(args);
 
 	return (
 		<Layout>
-			<KeyboardAvoidingWrapper>
-				<ThemedText type="title" style={styles.header}>
-					Add Item
-				</ThemedText>
-				<FormProvider {...formMethods}>
-					<ScrollView contentContainerStyle={styles.form}>
-						<Input name="name" placeholder="Name" />
-						<Input name="description" placeholder="Description" />
-						<Input
-							name="quantity"
-							keyboardType="numeric"
-							placeholder="Quantity"
-						/>
-						<Input
-							name="unitPrice"
-							keyboardType="numeric"
-							placeholder="Price"
-						/>
-						<ImageInput name="imageUrl" label="Image" />
-						<Button
-							label="Add"
-							onPress={handleSubmit(handleOnSubmitPress)}
-							isLoading={isPending}
-						/>
-					</ScrollView>
-				</FormProvider>
-			</KeyboardAvoidingWrapper>
+			<FormProvider {...formMethods}>
+				<WarehouseItemForm
+					title="Add Item"
+					buttonProps={{
+						label: "Add",
+						onPress: handleSubmit(handleOnSubmitPress),
+						isLoading: isPending,
+					}}
+				/>
+			</FormProvider>
 		</Layout>
 	);
 };

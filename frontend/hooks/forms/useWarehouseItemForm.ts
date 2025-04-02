@@ -2,7 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
-const CreateWarehouseItemSchema = yup.object().shape({
+const WarehouseItemSchema = yup.object().shape({
 	imageUrl: yup.string().required("Image is missing"),
 	name: yup.string().required("Item name is missing"),
 	description: yup.string().required("Item description is missing"),
@@ -10,12 +10,10 @@ const CreateWarehouseItemSchema = yup.object().shape({
 	unitPrice: yup.string().required("Price is missing"),
 });
 
-export type CreateWarehouseItemFormType = yup.InferType<
-	typeof CreateWarehouseItemSchema
->;
+export type WarehouseItemFormType = yup.InferType<typeof WarehouseItemSchema>;
 
-export const useCreateWarehouseItemForm = () => {
-	return useForm<CreateWarehouseItemFormType>({
+export const useWarehouseItemForm = () => {
+	return useForm<WarehouseItemFormType>({
 		defaultValues: {
 			imageUrl: "",
 			name: "",
@@ -23,6 +21,6 @@ export const useCreateWarehouseItemForm = () => {
 			quantity: "",
 			unitPrice: "",
 		},
-		resolver: yupResolver(CreateWarehouseItemSchema),
+		resolver: yupResolver(WarehouseItemSchema),
 	});
 };
