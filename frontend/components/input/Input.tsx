@@ -6,7 +6,7 @@ type Props = Omit<TextInputProps, "onChangeText, value"> & {
 	name: string;
 };
 
-export const Input = ({ name, ...rest }: Props) => {
+export const Input: React.FC<Props> = ({ name, ...rest }) => {
 	const { control } = useFormContext();
 	const { field, fieldState } = useController({ control, name });
 

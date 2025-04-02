@@ -12,7 +12,7 @@ type Props = {
 	label: string;
 };
 
-const ImageInput = ({ name, label }: Props) => {
+const ImageInput: React.FC<Props> = ({ name, label }) => {
 	const iconTintColor = useThemeColor({}, "icon");
 
 	const { control } = useFormContext();

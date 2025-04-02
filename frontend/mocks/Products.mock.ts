@@ -3,7 +3,7 @@ import { WarehouseItem } from "@/models/WarehouseItem";
 export const ProductsMock: WarehouseItem[] = [
 	{
 		id: 1,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -12,16 +12,15 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 2,
-		imageUrl: "assets/react_logo.png",
-		name: "CloudTalk logo sticker",
-		description:
-			"High-quality sticker of the best cloud calling solution provider in  the world",
+		imageUrl: require("../assets/images/react-logo.png"),
+		name: "CloudTalk logo ",
+		description: "High-quality sticker of the best cloud calling solution",
 		quantity: 100,
 		unitPrice: 1,
 	},
 	{
 		id: 3,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -30,7 +29,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 4,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -39,7 +38,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 5,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -48,7 +47,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 6,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -57,7 +56,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 7,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -66,7 +65,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 8,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -75,7 +74,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 9,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -84,7 +83,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 10,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -93,7 +92,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 11,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -102,7 +101,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 12,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -111,7 +110,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 13,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -120,7 +119,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 14,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -129,7 +128,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 15,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -138,7 +137,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 16,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",
@@ -147,7 +146,7 @@ export const ProductsMock: WarehouseItem[] = [
 	},
 	{
 		id: 17,
-		imageUrl: "assets/react_logo.png",
+		imageUrl: require("../assets/images/react-logo.png"),
 		name: "CloudTalk logo sticker",
 		description:
 			"High-quality sticker of the best cloud calling solution provider in  the world",

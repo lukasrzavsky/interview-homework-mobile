@@ -9,10 +9,10 @@ type Props = {
 	hasBackButton?: boolean;
 };
 
-const Layout = ({
+const Layout: React.FC<PropsWithChildren<Props>> = ({
 	children,
 	hasBackButton = true,
-}: PropsWithChildren<Props>) => {
+}) => {
 	const router = useRouter();
 
 	const insets = useSafeAreaInsets();

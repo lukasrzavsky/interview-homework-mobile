@@ -6,10 +6,13 @@ import { useThemeColor } from "../useThemeColor";
 import { ThemedText } from "@/components/ThemedText";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { ProductsMock } from "@/mocks/Products.mock";
+import { router } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 export const useWarehouseItemsTable = () => {
 	const [products, setProducts] = useState<WarehouseItem[]>(ProductsMock);
+
+	// const {data, isLoading, isError} = useGetWarehouseItems();
 
 	const iconTintColor = useThemeColor({}, "icon");
 
@@ -34,11 +37,22 @@ export const useWarehouseItemsTable = () => {
 	const columns = [
 		columnHelper.accessor("id", {
 			header: "ID",
-			cell: (info) => (
-				<ThemedText style={styles.cellText}>
-					{info.getValue()}
-				</ThemedText>
-			),
+			cell: (info) => {
+				const itemId = info.getValue();
+
+				const navigateToItem = () =>
+					router.push({
+						pathname: "/(tabs)/(status)/[id]",
+						params: { id: itemId },
+					});
+				return (
+					<TouchableOpacity onPress={navigateToItem}>
+						<ThemedText style={styles.cellText}>
+							{itemId}
+						</ThemedText>
+					</TouchableOpacity>
+				);
+			},
 			size: 80,
 		}),
 		columnHelper.accessor("name", {
@@ -93,6 +107,17 @@ export const useWarehouseItemsTable = () => {
 		}),
 	];
 
+	// useEffect(() => {
+	//   if(isError) {
+	// 	Toast.show({
+	// 		type: 'error',
+	// 		text1: 'Failed to load warehouse items!'
+	// 	  });
+	//   }
+
+	// }, [isError, Toast])
+
+	// return { products: data, columns, isLoading };
 	return { products, columns };
 };
 

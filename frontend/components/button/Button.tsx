@@ -8,12 +8,12 @@ type Props = {
 	isLoading?: boolean;
 };
 
-export const Button = ({
+export const Button: React.FC<Props> = ({
 	onPress,
 	label,
 	disabled = false,
 	isLoading = false,
-}: Props) => {
+}) => {
 	const isDisabled = disabled || isLoading;
 
 	return (
