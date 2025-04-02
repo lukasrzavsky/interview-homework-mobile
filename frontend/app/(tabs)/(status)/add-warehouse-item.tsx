@@ -1,4 +1,5 @@
 import { Button } from "@/components/button/Button";
+import ImageInput from "@/components/input/ImageInput";
 import { Input } from "@/components/input/Input";
 import Layout from "@/components/layout/Layout";
 import { ThemedText } from "@/components/ThemedText";
@@ -8,7 +9,7 @@ import {
 } from "@/hooks/forms/useCreateWarehouseItemForm";
 import { useCreateWarehouseItem } from "@/hooks/mutations/useCreateWarehouseItem";
 import { FormProvider } from "react-hook-form";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 const AddWarehouseItem = () => {
 	const formMethods = useCreateWarehouseItemForm();
@@ -26,9 +27,8 @@ const AddWarehouseItem = () => {
 				Add Item
 			</ThemedText>
 			<FormProvider {...formMethods}>
-				<View style={styles.form}>
+				<ScrollView contentContainerStyle={styles.form}>
 					<Input name="name" placeholder="Name" />
-					<Input name="imageUrl" placeholder="Url" />
 					<Input name="description" placeholder="Description" />
 					<Input
 						name="quantity"
@@ -40,12 +40,13 @@ const AddWarehouseItem = () => {
 						keyboardType="numeric"
 						placeholder="Price"
 					/>
+					<ImageInput name="imageUrl" label="Image" />
 					<Button
 						label="Add"
 						onPress={handleSubmit(handleOnSubmitPress)}
 						isLoading={isPending}
 					/>
-				</View>
+				</ScrollView>
 			</FormProvider>
 		</Layout>
 	);
@@ -59,6 +60,7 @@ const styles = StyleSheet.create({
 	form: {
 		gap: 12,
 		paddingHorizontal: 24,
+		paddingBottom: 36,
 	},
 });
 

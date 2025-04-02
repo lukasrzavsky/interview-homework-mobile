@@ -12,6 +12,7 @@ const TabsLayout = () => {
 				headerShown: false,
 			}}
 			backBehavior="history"
+			initialRouteName="(status)"
 		>
 			<Tabs.Screen
 				name="(status)"

@@ -49,6 +49,7 @@ const Layout = ({
 
 const styles = StyleSheet.create({
 	container: {
+		backgroundColor: "#fff",
 		flex: 1,
 	},
 	backButtonContainer: {

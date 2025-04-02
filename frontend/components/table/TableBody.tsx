@@ -5,34 +5,32 @@ type Props<T> = {
 	table: Table<T>;
 };
 
-export const TableBody = <T,>({ table }: Props<T>) => {
-	return (
-		<View>
-			{table.getRowModel().rows.map((row) => (
-				<View key={row.id} style={styles.row}>
-					<View style={styles.rowInner}>
-						{row.getVisibleCells().map((cell) => (
-							<View
-								key={cell.id}
-								style={[
-									styles.cell,
-									{
-										width: cell.column.getSize(),
-									},
-								]}
-							>
-								{flexRender(
-									cell.column.columnDef.cell,
-									cell.getContext(),
-								)}
-							</View>
-						))}
-					</View>
+export const TableBody = <T,>({ table }: Props<T>) => (
+	<View>
+		{table.getRowModel().rows.map((row) => (
+			<View key={row.id} style={styles.row}>
+				<View style={styles.rowInner}>
+					{row.getVisibleCells().map((cell) => (
+						<View
+							key={cell.id}
+							style={[
+								styles.cell,
+								{
+									width: cell.column.getSize(),
+								},
+							]}
+						>
+							{flexRender(
+								cell.column.columnDef.cell,
+								cell.getContext(),
+							)}
+						</View>
+					))}
 				</View>
-			))}
-		</View>
-	);
-};
+			</View>
+		))}
+	</View>
+);
 
 const styles = StyleSheet.create({
 	row: {
