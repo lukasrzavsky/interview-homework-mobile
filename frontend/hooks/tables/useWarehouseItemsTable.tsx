@@ -38,7 +38,7 @@ export const useWarehouseItemsTable = () => {
 				const itemId = info.getValue();
 
 				return (
-					<Link href={`/(tabs)/(status)/${itemId}`}>
+					<Link href={`/(tabs)/(items-status)/${itemId}`}>
 						<ThemedText style={styles.cellText}>
 							{itemId}
 						</ThemedText>
@@ -79,7 +79,9 @@ export const useWarehouseItemsTable = () => {
 			header: "Actions",
 			cell: ({ row }) => (
 				<View style={styles.actionContainer}>
-					<Link href={`/(tabs)/(status)/${row.original.id}/edit`}>
+					<Link
+						href={`/(tabs)/(items-status)/${row.original.id}/edit`}
+					>
 						<IconSymbol name="edit" color={iconTintColor} />
 					</Link>
 					<TouchableOpacity

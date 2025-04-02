@@ -12,7 +12,7 @@ const WarehouseStatusScreen: React.FC = () => {
 	const { products, columns } = useWarehouseItemsTable();
 
 	const handleOnAddItemPress = () =>
-		router.push("/(tabs)/(status)/add-warehouse-item");
+		router.push("/(tabs)/(items-status)/add-warehouse-item");
 
 	return (
 		<Layout hasBackButton={false}>

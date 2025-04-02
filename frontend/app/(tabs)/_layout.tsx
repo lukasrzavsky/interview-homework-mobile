@@ -12,16 +12,16 @@ const TabsLayout = () => {
 				headerShown: false,
 			}}
 			backBehavior="history"
-			initialRouteName="(status)"
+			initialRouteName="(items-status)"
 		>
 			<Tabs.Screen
-				name="(status)"
+				name="(items-status)"
 				options={{
 					title: "Status",
 					tabBarIcon: ({ color }) => (
 						<IconSymbol name="table" color={color} />
 					),
-					href: "/(tabs)/(status)",
+					href: "/(tabs)/(items-status)",
 				}}
 			/>
 			<Tabs.Screen
