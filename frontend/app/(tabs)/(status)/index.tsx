@@ -28,6 +28,7 @@ const WarehouseStatusScreen: React.FC = () => {
 const styles = StyleSheet.create({
 	headerContainer: {
 		flexDirection: "row",
+		alignItems: "center",
 		justifyContent: "space-between",
 		paddingHorizontal: 16,
 		paddingVertical: 24,
