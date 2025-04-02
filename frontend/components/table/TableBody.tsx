@@ -35,7 +35,7 @@ export const TableBody = <T,>({ table }: Props<T>) => (
 const styles = StyleSheet.create({
 	row: {
 		borderBottomWidth: 1,
-		borderBottomColor: "#e9ecef",
+		borderBottomColor: "#cecece",
 	},
 	rowInner: {
 		flexDirection: "row",
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
 		paddingVertical: 12,
 		paddingHorizontal: 8,
 		borderRightWidth: 1,
-		borderRightColor: "#e9ecef",
+		borderRightColor: "#cecece",
 	},
 });

@@ -1,8 +1,9 @@
+import { Button } from "@/components/button/Button";
 import Layout from "@/components/layout/Layout";
 import { Table } from "@/components/table/Table";
 import { ThemedText } from "@/components/ThemedText";
 import { useWarehouseItemsTable } from "@/hooks/tables/useWarehouseItemsTable";
-import { Link } from "expo-router";
+import { router } from "expo-router";
 
 import React from "react";
 import { StyleSheet, View } from "react-native";
@@ -10,13 +11,14 @@ import { StyleSheet, View } from "react-native";
 const WarehouseStatusScreen: React.FC = () => {
 	const { products, columns } = useWarehouseItemsTable();
 
+	const handleOnAddItemPress = () =>
+		router.push("/(tabs)/(status)/add-warehouse-item");
+
 	return (
 		<Layout hasBackButton={false}>
 			<View style={styles.headerContainer}>
 				<ThemedText type="title">Items</ThemedText>
-				<Link href="/(tabs)/(status)/add-warehouse-item">
-					<ThemedText type="link">Add Item</ThemedText>
-				</Link>
+				<Button label="Add Item" onPress={handleOnAddItemPress} />
 			</View>
 			<Table data={products} columns={columns} />
 		</Layout>

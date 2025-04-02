@@ -34,9 +34,9 @@ export const TableHeader = <T,>({ table }: Props<T>) => (
 
 const styles = StyleSheet.create({
 	headerRow: {
-		backgroundColor: "#f8f9fa",
+		backgroundColor: "#000",
 		borderBottomWidth: 1,
-		borderBottomColor: "#dee2e6",
+		borderBottomColor: "#cecece",
 	},
 	headerRowInner: {
 		flexDirection: "row",
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
 		paddingVertical: 12,
 		paddingHorizontal: 8,
 		borderRightWidth: 1,
-		borderRightColor: "#dee2e6",
+		borderRightColor: "#cecece",
 	},
 	headerText: {
 		fontWeight: "bold",
-		color: "#212529",
+		color: "#fff",
 		textAlign: "center",
 	},
 });
