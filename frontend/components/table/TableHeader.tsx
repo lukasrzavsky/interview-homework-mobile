@@ -34,7 +34,7 @@ export const TableHeader = <T,>({ table }: Props<T>) => (
 
 const styles = StyleSheet.create({
 	headerRow: {
-		backgroundColor: "#000",
+		backgroundColor: "#00FFB9",
 		borderBottomWidth: 1,
 		borderBottomColor: "#cecece",
 	},
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 	},
 	headerText: {
 		fontWeight: "bold",
-		color: "#fff",
+		color: "#000",
 		textAlign: "center",
 	},
 });
