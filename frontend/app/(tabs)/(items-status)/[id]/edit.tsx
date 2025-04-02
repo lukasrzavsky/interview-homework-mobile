@@ -6,7 +6,7 @@ import {
 } from "@/hooks/forms/useWarehouseItemForm";
 import { useEditWarehouseItem } from "@/hooks/mutations/useEditWarehouseItem";
 import { ProductsMock } from "@/mocks/Products.mock";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { FormProvider } from "react-hook-form";
 
@@ -30,14 +30,19 @@ const EditWarehouseItemScreen = () => {
 		quantity,
 		unitPrice,
 	}: WarehouseItemFormType) =>
-		mutate({
-			imageUrl,
-			name,
-			description,
-			quantity: +quantity,
-			unitPrice: +unitPrice,
-			id: +id,
-		});
+		mutate(
+			{
+				imageUrl,
+				name,
+				description,
+				quantity: +quantity,
+				unitPrice: +unitPrice,
+				id: +id,
+			},
+			{
+				onSuccess: router.back,
+			},
+		);
 
 	useEffect(() => {
 		if (!data) {

@@ -5,8 +5,8 @@ import {
 	useWarehouseItemForm,
 } from "@/hooks/forms/useWarehouseItemForm";
 import { useCreateWarehouseItem } from "@/hooks/mutations/useCreateWarehouseItem";
+import { router } from "expo-router";
 import { FormProvider } from "react-hook-form";
-import { StyleSheet } from "react-native";
 
 const AddWarehouseItem: React.FC = () => {
 	const formMethods = useWarehouseItemForm();
@@ -15,7 +15,8 @@ const AddWarehouseItem: React.FC = () => {
 
 	const { handleSubmit } = formMethods;
 
-	const handleOnSubmitPress = (args: WarehouseItemFormType) => mutate(args);
+	const handleOnSubmitPress = (args: WarehouseItemFormType) =>
+		mutate(args, { onSuccess: router.back });
 
 	return (
 		<Layout>
@@ -32,17 +33,5 @@ const AddWarehouseItem: React.FC = () => {
 		</Layout>
 	);
 };
-
-const styles = StyleSheet.create({
-	header: {
-		paddingHorizontal: 16,
-		paddingVertical: 24,
-	},
-	form: {
-		gap: 12,
-		paddingHorizontal: 24,
-		paddingBottom: 36,
-	},
-});
 
 export default AddWarehouseItem;

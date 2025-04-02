@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { KeyboardAvoidingView, Platform, StyleSheet } from "react-native";
 
 const HEADER_HEIGHT = 150;
+
 export const KeyboardAvoidingWrapper: React.FC<PropsWithChildren> = ({
 	children,
 }) => (

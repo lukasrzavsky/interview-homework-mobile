@@ -1,12 +1,12 @@
 import { WarehouseItem } from "@/models/WarehouseItem";
 import { createColumnHelper } from "@tanstack/react-table";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useThemeColor } from "../useThemeColor";
 
 import { ThemedText } from "@/components/ThemedText";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import { ProductsMock } from "@/mocks/Products.mock";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 export const useWarehouseItemsTable = () => {
@@ -21,15 +21,11 @@ export const useWarehouseItemsTable = () => {
 
 	// const { mutate, isPending } = useRemoveWarehouseItem();
 
-	const handleDelete = useCallback(
-		(id: number) => {
-			// mutate(id);
-			setProducts((previousProducts) =>
-				previousProducts.filter((product) => product.id !== id),
-			);
-		},
-		[setProducts],
-	);
+	const handleDelete = (itemId: number) =>
+		router.push({
+			pathname: "/(tabs)/(items-status)/remove-item-confirmation-modal",
+			params: { itemId },
+		});
 
 	const columns = [
 		columnHelper.accessor("id", {
