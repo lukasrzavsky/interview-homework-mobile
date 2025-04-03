@@ -4,6 +4,7 @@ import {
 	useReactTable,
 } from "@tanstack/react-table";
 import { ScrollView, StyleSheet, View } from "react-native";
+import { ThemedText } from "../ThemedText";
 import { TableBody } from "./TableBody";
 import { TableHeader } from "./TableHeader";
 
@@ -28,7 +29,16 @@ export const Table = <T,>({ data, columns }: Props<T>) => {
 			>
 				<View>
 					<TableHeader table={table} />
-					<TableBody table={table} />
+					{!data.length ? (
+						<ThemedText
+							type="subtitle"
+							style={styles.emptyDataText}
+						>
+							No data to display
+						</ThemedText>
+					) : (
+						<TableBody table={table} />
+					)}
 				</View>
 			</ScrollView>
 		</ScrollView>
@@ -38,5 +48,8 @@ export const Table = <T,>({ data, columns }: Props<T>) => {
 const styles = StyleSheet.create({
 	scrollViewContent: {
 		flexGrow: 1,
+	},
+	emptyDataText: {
+		padding: 24,
 	},
 });

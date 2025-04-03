@@ -19,7 +19,7 @@ export const useWarehouseItemsTable = () => {
 
 	const columnHelper = createColumnHelper<WarehouseItem>();
 
-	// const { mutate, isPending } = useRemoveWarehouseItem();
+	// const { mutate, isPending, isLodaing } = useRemoveWarehouseItem();
 
 	const handleDelete = (itemId: number) =>
 		router.push({
@@ -104,7 +104,7 @@ export const useWarehouseItemsTable = () => {
 	// }, [isError, Toast])
 
 	// return { products: data, columns, isLoading };
-	return { products, columns };
+	return { products, columns, isLoading: false };
 };
 
 const styles = StyleSheet.create({

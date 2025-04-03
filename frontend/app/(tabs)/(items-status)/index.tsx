@@ -9,7 +9,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 const WarehouseStatusScreen: React.FC = () => {
-	const { products, columns } = useWarehouseItemsTable();
+	const { products, columns, isLoading } = useWarehouseItemsTable();
 
 	const handleOnAddItemPress = () =>
 		router.push("/(tabs)/(items-status)/add-warehouse-item");
@@ -20,7 +20,13 @@ const WarehouseStatusScreen: React.FC = () => {
 				<ThemedText type="title">Items</ThemedText>
 				<Button label="Add Item" onPress={handleOnAddItemPress} />
 			</View>
-			<Table data={products} columns={columns} />
+			{isLoading ? (
+				<ThemedText type="subtitle" style={styles.centeredText}>
+					Loading...
+				</ThemedText>
+			) : (
+				<Table data={products} columns={columns} />
+			)}
 		</Layout>
 	);
 };
@@ -32,6 +38,9 @@ const styles = StyleSheet.create({
 		justifyContent: "space-between",
 		paddingHorizontal: 16,
 		paddingVertical: 24,
+	},
+	centeredText: {
+		textAlign: "center",
 	},
 });
 
